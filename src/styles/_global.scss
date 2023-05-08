@@ -1,3 +1,4 @@
+@import "./main.css";
 // Global styling for this template
 body,
 html {
@@ -36,6 +37,14 @@ hr.light {
   text-transform: uppercase;
   border: none;
   border-radius: 10rem;
+}
+.btn-primary {
+  color: white;  
+}
+.btn-primary:hover{
+    color: #fff;
+    background-color: #f24516;
+    border-color: #ee3e0d;
 }
 
 // Page section padding

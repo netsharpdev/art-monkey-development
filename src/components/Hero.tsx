@@ -22,10 +22,7 @@ const Hero = () => {
             <p className="text-white-75 font-weight-light mb-5">
               <i>"Wolność pochodzi z wnętrza"</i> - Frank Lloyd Wright
             </p>
-            <Anchor
-              className="btn btn-primary btn-xl js-scroll-trigger"
-              href="#about"
-            >
+            <Anchor className="btn btn-primary btn-xl" href="#about">
               Dowiedz się więcej!
             </Anchor>
           </Col>
