@@ -5,10 +5,10 @@ import Hero from "../components/Hero";
 import "../styles/creative.scss";
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main>
+    <>
       <Header></Header>
       <Hero></Hero>
-    </main>
+    </>
   );
 };
 

@@ -25,7 +25,7 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="navbarResponsive">
+        <Navbar.Collapse className="justify-content-end" id="navbarResponsive">
           <Nav as="ul" className="ml-auto my-2 my-lg-0">
             <Nav.Item as="li">
               <Nav.Link href="#about">O mnie</Nav.Link>
