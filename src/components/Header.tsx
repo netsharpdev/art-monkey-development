@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Container, Image, Nav, Navbar } from "react-bootstrap";
+import logo from "../images/1x/logo_1.png";
 const Header = () => {
   const [isNavbarWhite, setIsNavbarWhite] = useState(false);
   const imageStyle = {
@@ -34,11 +35,7 @@ const Header = () => {
     >
       <Container>
         <Navbar.Brand href="#page-top">
-          <Image
-            style={imageStyle}
-            src="https://artmonkey.pl/img/1x/logo_1.png"
-            alt="Art Monkey logo"
-          />
+          <Image style={imageStyle} src={logo} alt="Art Monkey logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           type="button"
