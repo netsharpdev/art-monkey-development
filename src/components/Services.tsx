@@ -144,7 +144,7 @@ const Services = () => {
                     <p className="text-muted mb-0">
                       Po akceptacji wizualizacji sporządzam projekt wykonawczy,
                       który zawiera:
-                      <ul className="text-muted text-left">
+                      <ul className="text-muted text-start">
                         <li>Rzut mieszkania.</li>
                         <li>Rzut sufitów.</li>
                         <li>Rzut z oznaczeniem malowania ścian.</li>
