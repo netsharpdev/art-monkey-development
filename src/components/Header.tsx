@@ -1,12 +1,37 @@
 import * as React from "react";
+import { useState } from "react";
 import { Container, Image, Nav, Navbar } from "react-bootstrap";
 const Header = () => {
+  const [isNavbarWhite, setIsNavbarWhite] = useState(false);
   const imageStyle = {
     height: "50px",
     marginRight: "10px",
   };
+
+  const changeBackground = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 66) {
+      setIsNavbarWhite(true);
+    } else {
+      setIsNavbarWhite(false);
+    }
+  };
+  React.useEffect(() => {
+    changeBackground();
+    window.addEventListener("scroll", changeBackground);
+  });
+
   return (
-    <Navbar id="mainNav" expand="lg" fixed="top" className="py-3 navbar-light">
+    <Navbar
+      id="mainNav"
+      expand="lg"
+      fixed="top"
+      className={
+        isNavbarWhite
+          ? "py-3 navbar-light navbar-scrolled"
+          : "py-3 navbar-light"
+      }
+    >
       <Container>
         <Navbar.Brand href="#page-top">
           <Image

@@ -1,9 +1,15 @@
 import * as React from "react";
-
+import { Col, Container, Row } from "react-bootstrap";
+import image1 from "../images/about/1.jpg";
+import image2 from "../images/about/2.jpg";
+import image3 from "../images/about/3.jpg";
+import image4 from "../images/about/4.jpg";
+import image5 from "../images/about/5.jpg";
+import image6 from "../images/about/6.jpg";
 const Services = () => {
   return (
     <section className="page-section" id="services">
-      <div className="container">
+      <Container>
         <h2 className="text-center mt-0">KOMPLEKSOWE PROJEKTY WNĘTRZ</h2>
         <hr className="divider my-4" />
         <p className="text-muted text-center mb-0">
@@ -14,14 +20,14 @@ const Services = () => {
           bieżących spraw i postępów w pracy nad projektem.
         </p>
         <hr className="divider my-4" />
-        <div className="row">
-          <div className="col-lg-12">
+        <Row>
+          <Col lg="12">
             <ul className="timeline">
               <li>
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src="img/about/1.jpg"
+                    src={image1}
                     alt=""
                   />
                 </div>
@@ -46,7 +52,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src="img/about/2.jpg"
+                    src={image2}
                     alt=""
                   />
                 </div>
@@ -73,7 +79,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src="../images/about/3.jpg"
+                    src={image3}
                     alt=""
                   />
                 </div>
@@ -100,7 +106,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src="img/about/4.jpg"
+                    src={image4}
                     alt=""
                   />
                 </div>
@@ -125,7 +131,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src="img/about/5.jpg"
+                    src={image5}
                     alt=""
                   />
                 </div>
@@ -162,7 +168,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src="img/about/6.jpg"
+                    src={image6}
                     alt=""
                   />
                 </div>
@@ -187,9 +193,9 @@ const Services = () => {
                 <div className="timeline-image"></div>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   );
 };
