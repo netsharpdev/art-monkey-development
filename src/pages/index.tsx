@@ -7,6 +7,7 @@ import About from "../components/About";
 import Services from "../components/Services";
 import ContactMe from "../components/ContactMe";
 import { Container } from "react-bootstrap";
+import Portfolio from "../components/Portfolio/Portfolio";
 const IndexPage: React.FC<PageProps> = () => {
   const date = new Date();
   const copyrightText =
@@ -17,6 +18,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Hero></Hero>
       <About></About>
       <Services></Services>
+      <Portfolio></Portfolio>
       <ContactMe></ContactMe>
       <footer className="bg-light py-5">
         <Container>
