@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 
@@ -21,6 +22,7 @@ const Portfolio = () => {
               <Image
                 className="img-fluid"
                 src="Image/portfolio/thumbnails/gabinet_b.jpg"
+                onClick={() => handleClick("gabinet_b")}
                 alt=""
               />
               <div className="portfolio-box-caption">
