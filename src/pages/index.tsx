@@ -10,30 +10,26 @@ import { Container } from "react-bootstrap";
 import Portfolio from "../components/Portfolio/Portfolio";
 
 const query = graphql`
-  {
-    gcms {
-      portfolio(where: { id: "clhns7346neye0bw5yu9ocz7y" }) {
-        items {
-          __typename
-          ... on PortfolioItem {
-            id
-            title
-            images {
-              url
-            }
-          }
-        }
+query portfolios {
+  contentfulPortfolio {
+    portfolioItems {
+      title
+      id
+      mainImage {
+        url
+      }
+      images {
+        url
       }
     }
   }
+}
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
-  const {
-    gcms: { portfolio },
-  } = useStaticQuery(query);
+  const val = useStaticQuery(query);
 
-  console.log(portfolio);
+  console.log(val);
   const date = new Date();
   const copyrightText =
     "Copyright &copy; " + date.getFullYear() + " - Art Monkey Creative Studio";
