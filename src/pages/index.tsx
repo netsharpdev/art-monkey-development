@@ -8,10 +8,11 @@ import Services from "../components/Services";
 import ContactMe from "../components/ContactMe";
 import { Container } from "react-bootstrap";
 import Portfolio from "../components/Portfolio/Portfolio";
+import { PortfolioModel } from "../models/portfolio";
 
 const query = graphql`
 query portfolios {
-  contentfulPortfolio(id: {eq: "28abniGZXX00bEIlx4TA8P"}) {
+  contentfulPortfolio(id: {eq: "2fb9b556-4ec4-56f5-bbdd-98dc437446fb"}) {
     portfolioItems {
       title
       id
@@ -27,9 +28,9 @@ query portfolios {
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
-  const val = useStaticQuery(query);
-
-  console.log(val);
+  const {contentfulPortfolio} = useStaticQuery(query);
+  const portfolioData = new PortfolioModel()
+  portfolioData.portfolioItems = contentfulPortfolio.portfolioItems.map((item: any) => { return {id: item.id, title: item.title, mainImage: item.mainImage.url, images: item.images.map((image: any) => image.url)}});
   const date = new Date();
   const copyrightText =
     "Copyright &copy; " + date.getFullYear() + " - Art Monkey Creative Studio";
@@ -39,7 +40,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Hero></Hero>
       <About></About>
       <Services></Services>
-      <Portfolio></Portfolio>
+      <Portfolio portfolio={portfolioData}></Portfolio>
       <ContactMe></ContactMe>
       <footer className="bg-light py-5">
         <Container>
