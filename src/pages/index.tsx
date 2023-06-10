@@ -11,7 +11,7 @@ import Portfolio from "../components/Portfolio/Portfolio";
 
 const query = graphql`
 query portfolios {
-  contentfulPortfolio {
+  contentfulPortfolio(id: {eq: "28abniGZXX00bEIlx4TA8P"}) {
     portfolioItems {
       title
       id
