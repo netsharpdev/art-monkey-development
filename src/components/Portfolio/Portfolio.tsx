@@ -8,10 +8,10 @@ interface PortfolioProps {
 const Portfolio = ({ portfolio }: PortfolioProps) => {
   return (
     <section id="portfolio">
-      <Container className="fluid p-0">
+      <Container fluid className="p-0">
         <h2 className="text-center mt-0">PORTFOLIO</h2>
         <hr className="divider my-4" />
-        <Row className="no-gutters">
+        <Row  className="g-0">
           {portfolio.portfolioItems.slice(0, 6).map((item) => {
             return <PortfolioElement portfolioItem={item} />;
           })}

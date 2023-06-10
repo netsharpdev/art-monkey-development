@@ -22,7 +22,7 @@ const PortfolioElement = ({portfolioItem}: PortfolioElementProps) => {
         <div className="portfolio-box-caption">
           <div className="project-category text-white-50">WNĘTRZA</div>
           <div className="project-name">
-            Projekt gabinetu w domu jednorodzinnym na Śląsku
+            {portfolioItem.title}
           </div>
         </div>
       </Anchor>

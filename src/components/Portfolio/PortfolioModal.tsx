@@ -1,6 +1,9 @@
 import React from "react";
 import { Col, Modal, Row, Image } from "react-bootstrap";
 import { PortfolioItem } from "../../models/portfolio";
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
 type PortfolioModalProps = {
   show: boolean;
   portfolio: PortfolioItem;
@@ -14,16 +17,11 @@ const PortfolioModal = ({ portfolio, show }: PortfolioModalProps) => {
         </Modal.Header>
         <Modal.Body>
           <Row>
-            <Col lg={4} md={12}>
-              <div
-                className="bg-image hover-overlay ripple shadow-1-strong rounded"
-                data-ripple-color="light"
-              >
-                <Image
-                  src={portfolio.mainImage}
-                  className="w-100"
-                />
-              </div>
+            <Col>
+             <LightGallery >
+              <a href={portfolio.mainImage}><img src={portfolio.mainImage} height="200px" width="250px"></img></a>
+              {portfolio.images.map((image)=>{ return <a href={image}></a>})}
+             </LightGallery>
             </Col>
           </Row>
         </Modal.Body>
