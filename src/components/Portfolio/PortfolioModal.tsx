@@ -1,13 +1,9 @@
 import React from "react";
 import { Col, Modal, Row, Image } from "react-bootstrap";
+import { PortfolioItem } from "../../models/portfolio";
 type PortfolioModalProps = {
   show: boolean;
   portfolio: PortfolioItem;
-};
-type PortfolioItem = {
-  id: string;
-  title: string;
-  description: string;
 };
 const PortfolioModal = ({ portfolio, show }: PortfolioModalProps) => {
   return (
@@ -24,7 +20,7 @@ const PortfolioModal = ({ portfolio, show }: PortfolioModalProps) => {
                 data-ripple-color="light"
               >
                 <Image
-                  src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
+                  src={portfolio.mainImage}
                   className="w-100"
                 />
               </div>
