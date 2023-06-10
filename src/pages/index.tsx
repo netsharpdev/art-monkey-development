@@ -9,28 +9,39 @@ import ContactMe from "../components/ContactMe";
 import { Container } from "react-bootstrap";
 import Portfolio from "../components/Portfolio/Portfolio";
 import { PortfolioModel } from "../models/portfolio";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 const query = graphql`
-query portfolios {
-  contentfulPortfolio(id: {eq: "2fb9b556-4ec4-56f5-bbdd-98dc437446fb"}) {
-    portfolioItems {
-      title
-      id
-      mainImage {
-        url
-      }
-      images {
-        url
+  query portfolios {
+    contentfulPortfolio(id: { eq: "2fb9b556-4ec4-56f5-bbdd-98dc437446fb" }) {
+      portfolioItems {
+        title
+        id
+        mainImage {
+          url
+        }
+        images {
+          url
+        }
       }
     }
   }
-}
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
-  const {contentfulPortfolio} = useStaticQuery(query);
-  const portfolioData = new PortfolioModel()
-  portfolioData.portfolioItems = contentfulPortfolio.portfolioItems.map((item: any) => { return {id: item.id, title: item.title, mainImage: item.mainImage.url, images: item.images.map((image: any) => image.url)}});
+  const { contentfulPortfolio } = useStaticQuery(query);
+  const portfolioData = new PortfolioModel();
+  portfolioData.portfolioItems = contentfulPortfolio.portfolioItems.map(
+    (item: any) => {
+      return {
+        id: item.id,
+        title: item.title,
+        mainImage: item.mainImage.url,
+        images: item.images.map((image: any) => image.url),
+      };
+    }
+  );
   const date = new Date();
   const copyrightText =
     "Copyright &copy; " + date.getFullYear() + " - Art Monkey Creative Studio";

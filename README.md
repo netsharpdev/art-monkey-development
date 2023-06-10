@@ -12,4 +12,9 @@
 This is a brand new 🆕 🔥 https://artmonkey.pl 🐒 website❗ Built with 💟 on Gatsby and React.
 
 Hosted on Netlify 🔌 (https://art-monkey-development.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f602ddf0-77d9-4c51-8dc8-5d981d94032f/deploy-status)](https://app.netlify.com/sites/art-monkey-development/deploys)
+
+## Libraries
+
+1. [Image Lightbox Gallery](https://yet-another-react-lightbox.com/)
