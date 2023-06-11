@@ -1,12 +1,9 @@
 import * as React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import image1 from "../images/about/1.jpg";
-import image2 from "../images/about/2.jpg";
-import image3 from "../images/about/3.jpg";
-import image4 from "../images/about/4.jpg";
-import image5 from "../images/about/5.jpg";
-import image6 from "../images/about/6.jpg";
-const Services = () => {
+interface ServicesProps {
+  images: string[];
+}
+const Services = ({ images }: ServicesProps) => {
   return (
     <section className="page-section" id="services">
       <Container>
@@ -27,7 +24,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src={image1}
+                    src={images[0]}
                     alt=""
                   />
                 </div>
@@ -52,7 +49,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src={image2}
+                    src={images[1]}
                     alt=""
                   />
                 </div>
@@ -79,7 +76,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src={image3}
+                    src={images[2]}
                     alt=""
                   />
                 </div>
@@ -106,7 +103,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src={image4}
+                    src={images[3]}
                     alt=""
                   />
                 </div>
@@ -131,7 +128,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src={image5}
+                    src={images[4]}
                     alt=""
                   />
                 </div>
@@ -168,7 +165,7 @@ const Services = () => {
                 <div className="timeline-image">
                   <img
                     className="rounded-circle img-fluid"
-                    src={image6}
+                    src={images[5]}
                     alt=""
                   />
                 </div>
