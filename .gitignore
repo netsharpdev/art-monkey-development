@@ -4,4 +4,4 @@ public
 src/gatsby-types.d.ts
 .env*
 .DS_Store
-src/.DS_Store
+**/.DS_Store
