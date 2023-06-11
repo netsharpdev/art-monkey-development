@@ -26,11 +26,16 @@ const query = graphql`
         }
       }
     }
+    contentfulPageData {
+      logo {
+        url
+      }
+    }
   }
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
-  const { contentfulPortfolio } = useStaticQuery(query);
+  const { contentfulPortfolio, contentfulPageData } = useStaticQuery(query);
   const portfolioData = new PortfolioModel();
   portfolioData.portfolioItems = contentfulPortfolio.portfolioItems.map(
     (item: any) => {
@@ -47,7 +52,7 @@ const IndexPage: React.FC<PageProps> = () => {
     "Copyright &copy; " + date.getFullYear() + " - Art Monkey Creative Studio";
   return (
     <>
-      <Header></Header>
+      <Header logo={contentfulPageData.logo.url}></Header>
       <Hero></Hero>
       <About></About>
       <Services></Services>

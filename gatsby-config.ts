@@ -6,8 +6,9 @@ require("dotenv").config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `art-monkey`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Art Monkey Creative Studio`,
+    siteUrl: `https://www.artmonkey.pl`,
+    description: `Art Monkey Creative Studio - Projektowanie wnętrz i mebli`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

@@ -1,8 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
 import { Container, Image, Nav, Navbar } from "react-bootstrap";
-import logo from "../images/1x/logo_1.png";
-const Header = () => {
+interface HeaderProps {
+  logo: string;
+}
+const Header = ({ logo }: HeaderProps) => {
   const [isNavbarWhite, setIsNavbarWhite] = useState(false);
   const imageStyle = {
     height: "50px",
