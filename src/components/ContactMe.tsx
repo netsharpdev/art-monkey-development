@@ -22,7 +22,11 @@ const ContactMe = () => {
               icon={faPhone}
               className="fa-3x mb-3 text-muted"
             ></FontAwesomeIcon>
-            <a className="d-block" href="tel:+48 501 869 124">
+            <a
+              className="d-block"
+              style={{ textDecoration: "none" }}
+              href="tel:+48 501 869 124"
+            >
               +48 501 869 124
             </a>
           </Col>
@@ -31,7 +35,11 @@ const ContactMe = () => {
               icon={faEnvelope}
               className="fa-3x mb-3 text-muted"
             ></FontAwesomeIcon>
-            <a className="d-block" href="mailto:studio@artmonkey.pl">
+            <a
+              style={{ textDecoration: "none" }}
+              className="d-block"
+              href="mailto:studio@artmonkey.pl"
+            >
               studio@artmonkey.pl
             </a>
           </Col>
