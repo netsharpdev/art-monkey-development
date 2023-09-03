@@ -2,13 +2,9 @@ import * as React from "react";
 export default function SEO() {
   return (
     <>
-      {" "}
+      <html lang="pl" />
       <title>Art Monkey Creative Studio | Projektowanie wnętrz i mebli</title>
       <meta charSet="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
       <meta
         name="description"
         content="Art Monkey Creative Studio, to pracownia projektowa działająca w obszarze projektowania wnętrz oraz mebli i małej architektury."
