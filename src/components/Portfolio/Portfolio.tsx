@@ -13,7 +13,7 @@ const Portfolio = ({ portfolio }: PortfolioProps) => {
         <hr className="divider my-4" />
         <Row className="g-0">
           {portfolio.portfolioItems.slice(0, 12).map((item) => {
-            return <PortfolioElement portfolioItem={item} />;
+            return <PortfolioElement key={item.id} portfolioItem={item} />;
           })}
         </Row>
       </Container>
