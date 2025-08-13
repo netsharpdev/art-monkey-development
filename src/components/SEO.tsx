@@ -1,8 +1,9 @@
 import * as React from "react";
+import Head from "next/head";
+
 export default function SEO() {
   return (
-    <>
-      <html lang="pl" />
+    <Head>
       <title>Art Monkey Creative Studio | Projektowanie wnętrz i mebli</title>
       <meta charSet="utf-8" />
       <meta
@@ -23,6 +24,6 @@ export default function SEO() {
         type="image/x-icon"
         href="https://assets.ctfassets.net/1ebvt041pe6t/4qJ2O0DUgzxyiIe5FJjSKj/edb3ee5ca9f5272f97bcfb79dd42cc71/favicon.ico"
       />
-    </>
+    </Head>
   );
 }

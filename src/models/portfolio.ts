@@ -1,6 +1,6 @@
-export class PortfolioModel{
-    id: string = '';
-    portfolioItems: PortfolioItem[] = [];
+export type PortfolioModel = {
+    id: string;
+    portfolioItems: PortfolioItem[];
 }
 
 export type PortfolioItem = {

@@ -1,20 +1,19 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+  <img alt="Next.js" src="https://nextjs.org/static/favicon/favicon-32x32.png" width="32" />
 </p>
 <h1 align="center">
-  Art Monkey Creative Studio WebSite
+  Art Monkey Creative Studio Website
 </h1>
 
 ## Description
 
-This is a brand new 🆕 🔥 https://artmonkey.pl 🐒 website❗ Built with 💟 on Gatsby and React.
+Ported from Gatsby to Next.js with React and Sass. Styling and components preserved.
 
-Hosted on Netlify 🔌 (https://art-monkey-development.netlify.app/)
+Hosted on Netlify (or any Node host).
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f602ddf0-77d9-4c51-8dc8-5d981d94032f/deploy-status)](https://app.netlify.com/sites/art-monkey-development/deploys)
+## Development
 
-## Libraries
-
-1. [Image Lightbox Gallery](https://yet-another-react-lightbox.com/)
+- Install deps: `npm install`
+- Run dev server: `npm run dev`
+- Build: `npm run build`
+- Start: `npm start`

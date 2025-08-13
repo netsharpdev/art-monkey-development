@@ -1,70 +1,33 @@
 import * as React from "react";
-import { HeadFC, PageProps, graphql, useStaticQuery } from "gatsby";
+import type { GetStaticProps, NextPage } from "next";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import "../styles/artmonkey.scss";
 import About from "../components/About";
 import Services from "../components/Services";
 import ContactMe from "../components/ContactMe";
 import { Container } from "react-bootstrap";
 import Portfolio from "../components/Portfolio/Portfolio";
 import { PortfolioModel } from "../models/portfolio";
-import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
 import SEO from "../components/SEO";
 
-const query = graphql`
-  query portfolios {
-    contentfulPortfolio(id: { eq: "2fb9b556-4ec4-56f5-bbdd-98dc437446fb" }) {
-      portfolioItems {
-        title
-        id
-        mainImage {
-          url
-        }
-        images {
-          url
-        }
-      }
-    }
-    contentfulPageData {
-      logo {
-        url
-      }
-      aboutImages {
-        url
-      }
-    }
-  }
-`;
+export type IndexPageProps = {
+  logoUrl: string;
+  aboutImages: string[];
+  portfolio: PortfolioModel;
+};
 
-const IndexPage: React.FC<PageProps> = () => {
-  const { contentfulPortfolio, contentfulPageData } = useStaticQuery(query);
-  const portfolioData = new PortfolioModel();
-  portfolioData.portfolioItems = contentfulPortfolio.portfolioItems.map(
-    (item: any) => {
-      return {
-        id: item.id,
-        title: item.title,
-        mainImage: item.mainImage.url,
-        images: item.images.map((image: any) => image.url),
-      };
-    }
-  );
+const IndexPage: NextPage<IndexPageProps> = ({ logoUrl, aboutImages, portfolio }) => {
   const date = new Date();
   const copyrightText =
     "Copyright &copy; " + date.getFullYear() + " - Art Monkey Creative Studio";
   return (
     <>
-      <Header logo={contentfulPageData.logo.url}></Header>
+      <SEO />
+      <Header logo={logoUrl}></Header>
       <Hero></Hero>
       <About></About>
-      <Services
-        images={contentfulPageData.aboutImages.map(
-          (image: { url: any }) => image.url
-        )}
-      ></Services>
-      <Portfolio portfolio={portfolioData}></Portfolio>
+      <Services images={aboutImages}></Services>
+      <Portfolio portfolio={portfolio}></Portfolio>
       <ContactMe></ContactMe>
       <footer className="bg-light py-5">
         <Container>
@@ -79,6 +42,23 @@ const IndexPage: React.FC<PageProps> = () => {
   );
 };
 
-export default IndexPage;
+export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
+  // TODO: Optionally wire up Contentful GraphQL/CDA here. For now provide safe defaults.
+  const portfolioData: PortfolioModel = {
+    id: "",
+    portfolioItems: [],
+  };
 
-export const Head: HeadFC = () => <SEO />;
+  const placeholderImages = new Array(6).fill("");
+
+  return {
+    props: {
+      logoUrl: "",
+      aboutImages: placeholderImages,
+      portfolio: portfolioData,
+    },
+    revalidate: 3600,
+  };
+};
+
+export default IndexPage;
